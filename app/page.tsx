@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { Htag } from "./components/Htag/Htag";
 
 export default function Home() {
   return (
-    <div className="main">
-      <h1>Hello Next.JS</h1>
-    </div>
+    <>
+      <Htag tag="h3">Hello Next.JS!</Htag>
+    </>
   );
 }
