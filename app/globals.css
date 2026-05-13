@@ -6,9 +6,11 @@
   --black: #38434e;
   --white: white;
   --primary: #7653fc;
+  --primary-hover: #542fe7;
   --red: #fc8360;
   --green: #1dc37e;
   --green-light: #c8f8e4;
+  --grey-light: #ebebeb;
 }
 
 @theme inline {
