@@ -1,20 +1,33 @@
 "use client";
-import Image from "next/image";
 import { Htag } from "./components/Htag/Htag";
 import { Button } from "./components/Button/Button";
 import { P } from "./components/P/P";
 import { Tag } from "./components/Tag/Tag";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Rating } from "./components/Rating/Rating";
 
 export default function Home() {
-  const [Counter, setCounter] = useState<number>(10);
+  const [counter, setCounter] = useState<number>(10);
+
+  useEffect(() => {
+    console.log("Counter" + counter);
+    return function cleanup() {
+      console.log("Effect Cleanup");
+    };
+  });
+
+  useEffect(() => {
+    console.log("Mounted");
+  }, []);
+
+  const [rating, setRating] = useState(3);
 
   return (
     <>
-      <Htag tag="h1">Hello Next.JS! - {Counter}</Htag>
+      <Htag tag="h1">Hello Next.JS! - {counter}</Htag>
       <Button
         appearance="primary"
-        onClick={() => setCounter((Counter) => Counter + 1)}
+        onClick={() => setCounter((counter) => counter + 1)}
       >
         Butonul
       </Button>
@@ -87,6 +100,8 @@ export default function Home() {
       <Tag size="m" color="primary" href="Lorem">
         Medium
       </Tag>
+      <br />
+      <Rating rating={rating} setRating={setRating} isEditable />
     </>
   );
 }

@@ -1,0 +1,22 @@
+.filled {
+  cursor: pointer;
+}
+
+.star {
+  display: inline-block;
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+  vertical-align: middle;
+}
+
+.editable {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.editable .star:hover {
+  transform: scale(1.1);
+  display: inline-block;
+}
