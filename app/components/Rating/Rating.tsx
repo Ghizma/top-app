@@ -8,7 +8,6 @@ export const Rating = ({
   isEditable = false,
   rating,
   setRating,
-  className,
   ...props
 }: RatingProps): JSX.Element => {
   const [displayRating, setDisplayRating] = useState<number>(rating);
