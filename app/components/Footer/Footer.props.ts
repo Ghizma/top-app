@@ -1,3 +1,6 @@
-import { ReactNode } from "react";
+import { DetailedHTMLProps } from "react";
 
-export interface FooterProps {}
+export interface FooterProps extends DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> {}
