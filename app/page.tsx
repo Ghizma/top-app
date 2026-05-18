@@ -5,8 +5,9 @@ import { P } from "./components/P/P";
 import { Tag } from "./components/Tag/Tag";
 import { useEffect, useState } from "react";
 import { Rating } from "./components/Rating/Rating";
+import { withLayout } from "./components/LayoutComp/LayoutComp";
 
-export default function Home() {
+function Home() {
   const [counter, setCounter] = useState<number>(10);
 
   useEffect(() => {
@@ -105,3 +106,5 @@ export default function Home() {
     </>
   );
 }
+
+export default withLayout(Home);

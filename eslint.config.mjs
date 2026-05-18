@@ -20,6 +20,12 @@ const eslintConfig = defineConfig([
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      "@typescript-eslint/no-empty-object-type": [
+        "error",
+        {
+          allowSingleExtends: true,
+        },
+      ],
     },
   },
 ]);
