@@ -1,13 +1,15 @@
-"use client";
-import { Htag } from "./components/Htag/Htag";
-import { Button } from "./components/Button/Button";
-import { P } from "./components/P/P";
-import { Tag } from "./components/Tag/Tag";
+import { Htag } from "../components/Htag/Htag";
+import { Button } from "../components/Button/Button";
+import { P } from "../components/P/P";
+import { Tag } from "../components/Tag/Tag";
 import { useEffect, useState } from "react";
-import { Rating } from "./components/Rating/Rating";
-import { withLayout } from "./components/LayoutComp/LayoutComp";
+import { Rating } from "../components/Rating/Rating";
+import { withLayout } from "../components/LayoutComp/LayoutComp";
+import { GetStaticProps } from "next";
+import axios from "axios";
+import { Category } from "@/interfaces/category.interface";
 
-function Home() {
+function Home({ category }: HomeProps) {
   const [counter, setCounter] = useState<number>(10);
 
   useEffect(() => {
@@ -108,3 +110,18 @@ function Home() {
 }
 
 export default withLayout(Home);
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data: category } = await axios.get<Category[]>(
+    process.env.NEXT_PUBLIC_DOMAIN + "/products/categories",
+  );
+  return {
+    props: {
+      category,
+    },
+  };
+};
+
+interface HomeProps {
+  category: Category[];
+}
