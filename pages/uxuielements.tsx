@@ -31,7 +31,7 @@ function UiUxElements({ category }: UiUxElementsProps) {
 
   return (
     <>
-      <Htag tag="h1">UiUx Elements</Htag>
+      <Htag tag="h1">Ux / Ui Elements</Htag>
       <Button appearance="primary">Butonul</Button>
       <Button appearance="primary" arrow="right">
         Butonul

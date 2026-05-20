@@ -13,7 +13,9 @@ export const Sidebar = ({ ...props }: SidebarProps) => {
         </h1>
         <ul className={styles.menu}>
           <Menu />
-          <h1></h1>
+          <h1>
+            <Link href={`/uxuielements`}>UxUi Elements</Link>
+          </h1>
         </ul>
       </div>
     </>
