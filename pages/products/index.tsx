@@ -14,7 +14,7 @@ interface ProductPageProps {
 }
 
 // Componenta paginii
-function ProductPage({ page }: ProductPageProps) {
+export function ProductPage({ page }: ProductPageProps) {
   return (
     <>
       <h1>Products</h1>
